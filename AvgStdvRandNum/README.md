@@ -1,1 +1,1 @@
-Interface to calculate hte average and standard deviation of a set of random numbers.
+Interface to calculate the average and standard deviation of a set of random numbers.
