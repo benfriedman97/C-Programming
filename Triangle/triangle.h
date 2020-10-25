@@ -33,12 +33,4 @@ void triangle_destroy(ITEM* phItem);
 
 Status triangle_assignment(ITEM *pLeft, ITEM right);
 
-///*Precondition: hTriangle is a valid triangle object
-//Postcondition: the three cordinates and area of the triangle
-//have been printed to stdout*/
-//void triangle_print_information(ITEM item);
-//
-//
-//double triangle_get_area(ITEM item);
-
 #endif
