@@ -1,3 +1,8 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+#define MAX 1000
+
 int main(void)
 {
 	int i, n, //number
@@ -42,6 +47,36 @@ int main(void)
 		printf("%d\n", a[i]);
 	printf("\n\nRepeat: %d\n", n);
 	free(a);
+
+	return 0;
+}
+
+
+
+
+
+int main(void)
+{
+	int a[MAX], i, n, count = 0;
+	for (i = 1; i < MAX; i++)
+		a[i] = i;
+	srand(time(0));
+	int not_all_numbers_generated = 1;
+	while (not_all_numbers_generated) {
+		n = rand();
+		count++;
+		while (n >= MAX)
+			n /= MAX;
+		if (a[n] == n)
+			a[n] = -1;
+
+		not_all_numbers_generated = 0;
+		for (i = 1; i < MAX && !not_all_numbers_generated; i++) {
+			if (a[i] != -1)
+				not_all_numbers_generated = 1;
+		}
+	}
+	printf("%d", count);
 
 	return 0;
 }
