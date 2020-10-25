@@ -24,6 +24,9 @@ void sieve_of_eratosthenes_original(int N);
 //returns the number of prime numbers*/
 int sieve_of_eratosthenes_1(int N);
 
+/*Prints out prime numbers less than N and
+returns the number of prime numbers*/
+int sieve_of_eratosthenes_num_primes(int N);
 
 
 
@@ -159,5 +162,24 @@ int sieve_of_eratosthenes_1(int n)
 			num_primes++;
 		}
 	free(a);
+	return num_primes;
+}
+
+int sieve_of_eratosthenes_num_primes(int N)
+{
+	int i, j, num_primes = 0, *a = (int*)malloc(sizeof(int) * N);
+	if (a == NULL) { printf("Malloc failure\n"); exit(1);
+	}
+	for (i = 2; i < N; i++)
+		a[i] = 1;
+	for (i = 2; i < N; i++)
+		if (a[i])
+			for (j = i; i * j < N; j++)
+				a[i * j] = 0;
+	for (i = 2; i < N; i++)
+		if (a[i])
+			num_primes++;
+	free(a);
+	
 	return num_primes;
 }
