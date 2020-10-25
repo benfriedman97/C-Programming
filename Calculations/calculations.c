@@ -17,7 +17,8 @@ In general, ceiling(lg(N + 1)) is the number of
 bits in N, so calcaulate do ceiling(lg(N! + 1))*/
 int calc_bits_in_lg_N_facotorial(int n);
 
-
+/*prints out the prime numbers up to N*/
+void sieve_of_eratosthenes_original(int N);
 
 
 long double harmonic_nat_log(int n)
@@ -95,4 +96,28 @@ int calc_bits_in_lg_N_facotorial(int n)
 		return lg + 1;
 	else
 		return lg;
+}
+
+
+void sieve_of_eratosthenes_original(int N)
+{
+	int i, j,
+		*a = (int*)malloc(sizeof(int) * N);
+	if (a == NULL) {
+		printf("Malloc failure\n");
+		exit(1);
+	}
+	for (i = 2; i < N; i++)
+		a[i] = 1;
+	for (i = 2; i < N; i++) {
+		if (a[i]) {
+			for (j = i; i * j < N; j++) {
+				a[i * j] = 0;
+			}
+		}
+	}
+	for (i = 2; i < N; i++)
+		if (a[i])
+			printf("%4d ", i);
+	printf("\n");
 }
