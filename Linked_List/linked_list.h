@@ -31,7 +31,7 @@ Node* list_exchange_nodes(Node *head, Node *t, Node *u);
 //helper function: returns address of nth node of singly linked list
 Node *list_get_node_address(Node *head, int n);
 
-/Returns point to a copy of a new list*/
+/*Returns point to a copy of a new list*/
 Node *list_copy(Node *head);
 
 /*Removes all itemson a given list for which the function
