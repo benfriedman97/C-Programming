@@ -20,6 +20,12 @@ int calc_bits_in_lg_N_facotorial(int n);
 /*prints out the prime numbers up to N*/
 void sieve_of_eratosthenes_original(int N);
 
+//Prints out prime numbers up to N and
+//returns the number of prime numbers*/
+int sieve_of_eratosthenes_1(int N);
+
+
+
 
 long double harmonic_nat_log(int n)
 {
@@ -120,4 +126,38 @@ void sieve_of_eratosthenes_original(int N)
 		if (a[i])
 			printf("%4d ", i);
 	printf("\n");
+}
+
+
+int sieve_of_eratosthenes_1(int n)
+{
+	unsigned int i, j;
+	int num_primes = 0,
+		*a = (int*)malloc(sizeof(int) * n);
+	if (a == null) {
+		printf("malloc failure\n");
+		exit(1);
+	}
+	for (i = 2; i < n; i++)
+		a[i] = 1;
+	for (i = 2; i < n; i++) {
+		if (a[i]) {
+			for (j = i; i * j < n; j++) {
+				a[i * j] = 0;
+			}
+		}
+	}
+
+	/*this is the part that prints out all the prime numbers
+	and calculates the prime numbers. the print is
+	commented out for now because i just want to print
+	the total prime numbers of to n using the return statement
+	but not actually print every prime number*/
+	for (i = 2; i < n; i++)
+		if (a[i]) {
+			//printf("%4d ", i);
+			num_primes++;
+		}
+	free(a);
+	return num_primes;
 }
