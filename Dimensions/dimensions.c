@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
-#include "3.23dimensions.h"
+#include "dimensions.h"
 
 #define INIT_DIMENSIONS 2
 
