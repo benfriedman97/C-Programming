@@ -1,12 +1,3 @@
-/*3.24
-Write a function that returns the number of nodes on a circular list, given a pointer 
-to one of the nodes on the list
-3.25
-Write a code fragment that determines the number of nodes that are between the 
-nodes referenced by two given pointers x and t to nodes on a circular list.
-
-*/
-
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -18,6 +9,7 @@ typedef struct node {
 /*creates a circular list of N nodes*/
 void create_circular_list(Node *list, int N, int start);
 
+/*Prints a circular list*/
 void print_circular_list(Node *list);
 
 /*Returns number of nodes in a circular linked list
