@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "header.h"
+#include "linked_list.h"
 
 Node* list_create_list(int size)
 {
