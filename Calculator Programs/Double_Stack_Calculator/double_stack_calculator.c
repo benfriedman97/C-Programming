@@ -1,11 +1,3 @@
-/*
-4.16 Combine Program 4.2 and Program 4.3 into a single module that uses two different stack 
-ADTs: a stack of integers and a stack of operators.
-- part 1: from 4.3, get an expressoin in infix and convert it to postfix
-- part 2: solve the postfix expression
-- difference between past programs is now we're using two separate stacks
-*/
-
 #include <stdio.h>
 #include <string.h>
 #include <math.h>
