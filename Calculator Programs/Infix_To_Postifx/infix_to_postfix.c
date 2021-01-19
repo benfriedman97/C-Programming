@@ -1,6 +1,3 @@
-/*Takes an infix expression and converts it to postfix.
-Works for +, -, /, *, positve/negative, integer/float
-*/
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
