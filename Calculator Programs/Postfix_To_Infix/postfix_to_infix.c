@@ -1,4 +1,4 @@
-/*Converts from postfix to infix
+/* Algorithm
 - if a character is an operand, push it to the stack
 - if a character is an operator, pop operand from the stack, say its s1. Pop
   operator from the stack, say its s2. Perform s2 operator s1 and push it to
