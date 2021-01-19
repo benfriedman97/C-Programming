@@ -1,6 +1,3 @@
-/*Postfix expression calculator now work for +, -, /, *, integers and floating
-point, negatives, and square roots
-*/
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
