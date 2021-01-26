@@ -1,0 +1,52 @@
+Visual Leak Detector read settings from: C:\Program Files (x86)\Visual Leak Detector\vld.ini
+Visual Leak Detector Version 2.5.1 installed.
+For the set of 1000 random numbers between 0 and 9:
+        Average: 2.69
+        Standard Deviation: 2.12
+
+For the set of 1000 random numbers between 0 and 99:
+        Average: 30.21
+        Standard Deviation: 21.36
+
+For the set of 1000 random numbers between 0 and 999:
+        Average: 323.82
+        Standard Deviation: 224.42
+
+For the set of 10000 random numbers between 0 and 9:
+        Average: 2.70
+        Standard Deviation: 2.17
+
+For the set of 10000 random numbers between 0 and 99:
+        Average: 31.07
+        Standard Deviation: 21.63
+
+For the set of 10000 random numbers between 0 and 999:
+        Average: 313.79
+        Standard Deviation: 216.04
+
+For the set of 100000 random numbers between 0 and 9:
+        Average: 2.70
+        Standard Deviation: 2.17
+
+For the set of 100000 random numbers between 0 and 99:
+        Average: 31.14
+        Standard Deviation: 21.78
+
+For the set of 100000 random numbers between 0 and 999:
+        Average: 316.52
+        Standard Deviation: 218.03
+
+For the set of 1000000 random numbers between 0 and 9:
+        Average: 2.70
+        Standard Deviation: 2.17
+
+For the set of 1000000 random numbers between 0 and 99:
+        Average: 31.13
+        Standard Deviation: 21.82
+
+For the set of 1000000 random numbers between 0 and 999:
+        Average: 315.97
+        Standard Deviation: 218.05
+
+No memory leaks detected.
+Visual Leak Detector is now exiting.
