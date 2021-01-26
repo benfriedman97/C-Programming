@@ -1,14 +1,15 @@
 #include <stdlib.h>
 #include <math.h>
 #include "AvgStdvRandNum.h"
+
+
 typedef double Number;
 typedef struct avg_and_stdv {
-	double avg,
-		stdv;
+	double avg, stdv;
 } Avg_and_stdv;
 
-AVG_STDV avg_and_stdv_init_default(void)
-{
+
+AVG_STDV avg_and_stdv_init_default(void) {
 	Avg_and_stdv *pAvg_stdv = (Avg_and_stdv*)malloc(sizeof(Avg_and_stdv));
 	if (pAvg_stdv != NULL) {
 		pAvg_stdv->avg = 0;
@@ -18,16 +19,14 @@ AVG_STDV avg_and_stdv_init_default(void)
 }
 
 
-void avg_and_stdv_destroy(AVG_STDV* phAvg_and_stdv)
-{
-	Avg_and_stdv *pAvg_stdv = (Avg_and_stdv*)*phAvg_and_stdv;	//cast to known type
+void avg_and_stdv_destroy(AVG_STDV* phAvg_and_stdv) {
+	Avg_and_stdv *pAvg_stdv = (Avg_and_stdv*)*phAvg_and_stdv;
 	free(pAvg_stdv);
 	*phAvg_and_stdv = NULL;
 }
 
 
-Status avg_and_stdv_calculate_avg_and_stdv1(AVG_STDV hAvg_and_stdv, int N, int r)
-{
+Status avg_and_stdv_calculate_avg_and_stdv1(AVG_STDV hAvg_and_stdv, int N, int r) {
 	if (N < 1 || r < 1)
 		return FAILURE;
 
@@ -50,8 +49,7 @@ Status avg_and_stdv_calculate_avg_and_stdv1(AVG_STDV hAvg_and_stdv, int N, int r
 }
 
 
-Status avg_and_stdv_calculate_avg_and_stdv2(AVG_STDV hAvg_and_stdv, int N, int r)
-{
+Status avg_and_stdv_calculate_avg_and_stdv2(AVG_STDV hAvg_and_stdv, int N, int r) {
 	if (N < 1 || r < 1)
 		return FAILURE;
 
@@ -72,14 +70,12 @@ Status avg_and_stdv_calculate_avg_and_stdv2(AVG_STDV hAvg_and_stdv, int N, int r
 }
 
 
-double avg_and_stdv_get_avg(AVG_STDV hAvg_and_stdv)
-{
+double avg_and_stdv_get_avg(AVG_STDV hAvg_and_stdv) {
 	Avg_and_stdv *pAvg_stdv = (Avg_and_stdv*)hAvg_and_stdv;
 	return pAvg_stdv->avg;
 }
 
-double avg_and_stdv_get_stdv(AVG_STDV hAvg_and_stdv)
-{
+double avg_and_stdv_get_stdv(AVG_STDV hAvg_and_stdv) {
 	Avg_and_stdv *pAvg_stdv = (Avg_and_stdv*)hAvg_and_stdv;
 	return pAvg_stdv->stdv;
 }
