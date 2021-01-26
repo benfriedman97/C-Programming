@@ -11,13 +11,17 @@ typedef void* AVG_STDV;
 AVG_STDV avg_and_stdv_init_default(void);
 
 /* Precondition: hAvg_and_stdv is a valid handle to an avg_and_stdv object
-   Postcondition:  */
+   Postcondition: calculates the average and standard deviation for N random integers
+   between 0 and r - 1 by using rand() % r. The average and stdev are now stored in
+   the object. */
 Status avg_and_stdv_calculate_avg_and_stdv1(AVG_STDV hAvg_and_stdv, int N, int r);
 
 /* Precondition: hAvg_and_stdv is a valid handle to an avg_and_stdv object
-    Postcondition: the average and standard deviation of a set of N numbers, where
-    each number is randomly generated and is no greater than r - 1, is now stored
-    in the object pointed to by the handle */
+    Postcondition: similar to the other function except it calculates the
+    N random numbers differently. It generates N random numbers of type double
+    between 0 and 1, transforms them into integers between 0 and r - 1 by multiplying
+    by r, and then truncating the result. The average and stdev are now stored in
+   the object. */
 Status avg_and_stdv_calculate_avg_and_stdv2(AVG_STDV hAvg_and_stdv, int N, int r);
 
 /*Precondition: hAvg_and_stdv is a valid object
