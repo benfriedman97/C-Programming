@@ -3,7 +3,7 @@
 #include "AvgStdvRandNum.h"
 
 
-typedef double Number;
+typedef double Number;	// must be "int", not double, for stdv1 function
 typedef struct avg_and_stdv {
 	double avg, stdv;
 } Avg_and_stdv;
