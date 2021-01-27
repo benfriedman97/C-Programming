@@ -1,8 +1,7 @@
 #ifndef MY_STRING_H
 #define MY_STRING_H
 
-/* 3.56
-   Prints out a table giving, for each character in the string
+/* Prints out a table giving, for each character in the string
    the character and its frequency of occurence. Looks for characters
    on the ASCII table from 32-126 */
 void string_character_occurence(char *str);
