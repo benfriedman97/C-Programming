@@ -6,8 +6,8 @@ typedef struct node {
 	struct node *next;
 } Node;
 
-/*Builds a circular list by only making it circular
-at the very end*/
+/* Builds a circular list by only making it circular
+at the very end */
 void create_circular_list(Node *list, int N, int start);
 void print_circular_list(Node *list);
 
