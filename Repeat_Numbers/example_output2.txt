@@ -1,0 +1,2 @@
+It can be expected that 6827 random positive integers less than 1000 will be generated before
+each value gets generated twice.
