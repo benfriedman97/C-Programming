@@ -1,0 +1,84 @@
+Visual Leak Detector read settings from: C:\Program Files (x86)\Visual Leak Detector\vld.ini
+Visual Leak Detector Version 2.5.1 installed.
+During random number generation, it took
+75 numbers before getting a repeat
+597
+692
+82
+628
+668
+984
+147
+489
+495
+639
+105
+111
+906
+1000
+764
+902
+739
+54
+672
+714
+304
+113
+307
+586
+573
+949
+150
+324
+477
+190
+915
+71
+710
+812
+598
+865
+240
+128
+15
+306
+738
+184
+174
+767
+26
+923
+4
+433
+566
+888
+396
+16
+801
+125
+331
+789
+546
+34
+685
+925
+272
+558
+94
+591
+420
+653
+321
+626
+788
+753
+45
+511
+104
+414
+979
+
+
+Repeat: 653
+No memory leaks detected.
+Visual Leak Detector is now exiting.
