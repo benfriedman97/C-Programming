@@ -1,42 +1,41 @@
 #include <stdio.h>
 #include <math.h>
+
 #define EULER 0.57721
 #define ERROR -1
 
 
-/*Approximates value of harmonic function using formula
-H = ln(N) + y + 1/(12N) where y is euler's constant (0.57721...)*/
+/* Approximates value of harmonic function using formula
+   H = ln(N) + y + 1/(12N) where y is euler's constant (0.57721...) */
 long double harmonic_nat_log(int n);
 long double harmonic_sigma(int n);
 
-/*Calculates lg lg N-- log_2(log_2 N)*/
+/* Calculates lg lg N-- log_2(log_2 N) */
 int calculate(int n);
 
-/*Calculates the number of bits in lg(N!)
-In general, ceiling(lg(N + 1)) is the number of 
-bits in N, so calcaulate do ceiling(lg(N! + 1))*/
+/* Calculates the number of bits in lg(N!)
+   In general, ceiling(lg(N + 1)) is the number of 
+   bits in N, so calcaulate do ceiling(lg(N! + 1)) */
 int calc_bits_in_lg_N_facotorial(int n);
 
-/*prints out the prime numbers up to N*/
+/* prints out the prime numbers up to N */
 void sieve_of_eratosthenes_original(int N);
 
-//Prints out prime numbers up to N and
-//returns the number of prime numbers*/
+/* Prints out prime numbers up to N and
+  returns the number of prime numbers */
 int sieve_of_eratosthenes_1(int N);
 
-/*Prints out prime numbers less than N and
-returns the number of prime numbers*/
+/* Prints out prime numbers less than N and
+   returns the number of prime numbers */
 int sieve_of_eratosthenes_num_primes(int N);
 
 
 
-long double harmonic_nat_log(int n)
-{
+long double harmonic_nat_log(int n) {
 	return log(n) + EULER + 1.0 / (12 * n);
 }
 
-long double harmonic_sigma(int n)
-{
+long double harmonic_sigma(int n) {
 	if (n < 1) {
 		printf("error. n must be at least 1\n");
 		return ERROR;
@@ -49,8 +48,7 @@ long double harmonic_sigma(int n)
 
 
 
-int calculate(int n)
-{
+int calculate(int n) {
 	if (n <= 1) {
 		printf("Error. N must be at least 2\n");
 		return ERROR;
@@ -85,8 +83,7 @@ int calculate(int n)
 }
 
 
-int calc_bits_in_lg_N_facotorial(int n)
-{
+int calc_bits_in_lg_N_facotorial(int n) {
 	int factorial = 1,
 		num_bits = 1,	//even 0! = 1 which is 1 bit
 		remainder = 0;
@@ -108,8 +105,7 @@ int calc_bits_in_lg_N_facotorial(int n)
 }
 
 
-void sieve_of_eratosthenes_original(int N)
-{
+void sieve_of_eratosthenes_original(int N) {
 	int i, j,
 		*a = (int*)malloc(sizeof(int) * N);
 	if (a == NULL) {
@@ -132,8 +128,7 @@ void sieve_of_eratosthenes_original(int N)
 }
 
 
-int sieve_of_eratosthenes_1(int n)
-{
+int sieve_of_eratosthenes_1(int n) {
 	unsigned int i, j;
 	int num_primes = 0,
 		*a = (int*)malloc(sizeof(int) * n);
@@ -165,8 +160,7 @@ int sieve_of_eratosthenes_1(int n)
 	return num_primes;
 }
 
-int sieve_of_eratosthenes_num_primes(int N)
-{
+int sieve_of_eratosthenes_num_primes(int N) {
 	int i, j, num_primes = 0, *a = (int*)malloc(sizeof(int) * N);
 	if (a == NULL) { printf("Malloc failure\n"); exit(1);
 	}
