@@ -2,8 +2,6 @@
 #include <stdlib.h>
 #include <time.h>
 
-/*Runs the bernoulli experiment for M experiments
-with each experiment having N coin flips*/
 void bernoulli(int N, int M, int p);
 int heads(int p);
 
