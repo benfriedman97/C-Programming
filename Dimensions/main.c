@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
-#include "3.23dimensions.h"
+#include "dimensions.h"
 
 void get_dimensions_points_max_length(int *pDimensions, int *pNum_points, 
 	double *pMax_length);
@@ -19,7 +19,7 @@ int main(int argc, char *arv[])
 	//get number of dimensions, number of points, and max length
 	get_dimensions_points_max_length(&dimensions, &number_of_points, &max_length);
 	
-	//srand(time(0));
+	srand(time(NULL));
 	//create objects and store them in vector
 	for (i = 0; i < number_of_points; i++) {
 		//point_get_point2(hPoint, dimensions, i);
