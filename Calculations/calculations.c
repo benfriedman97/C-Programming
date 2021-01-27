@@ -8,6 +8,8 @@
 /* Approximates value of harmonic function using formula
    H = ln(N) + y + 1/(12N) where y is euler's constant (0.57721...) */
 long double harmonic_nat_log(int n);
+
+/* Calculates the harmonic sigma function for up to N */
 long double harmonic_sigma(int n);
 
 /* Calculates lg lg N-- log_2(log_2 N) */
