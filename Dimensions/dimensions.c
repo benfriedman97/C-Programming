@@ -5,13 +5,14 @@
 
 #define INIT_DIMENSIONS 2
 
+
 typedef struct point {
 	int dimensions;
 	double *data;
 } Point;
 
-POINT point_init_default(void)
-{
+
+POINT point_init_default(void) {
 	Point *pPoint = (Point*)malloc(sizeof(Point));
 	if (pPoint != NULL) {
 		pPoint->dimensions = INIT_DIMENSIONS;
@@ -24,8 +25,8 @@ POINT point_init_default(void)
 	return (POINT)pPoint;
 }
 
-Status point_get_point(POINT hPoint, int dimensions)
-{
+
+Status point_get_point(POINT hPoint, int dimensions) {
 	Point *pPoint = (Point*)hPoint;
 	int i;
 	double *temp;
@@ -34,6 +35,7 @@ Status point_get_point(POINT hPoint, int dimensions)
 		temp = (double*)malloc(sizeof(double) * dimensions);
 		if (temp == NULL)
 			return FAILURE;
+		fre(pPoint->data);
 		pPoint->data = temp;
 		pPoint->dimensions = dimensions;
 	}
@@ -46,8 +48,7 @@ Status point_get_point(POINT hPoint, int dimensions)
 }
 
 
-Status point_get_point2(POINT hPoint, int dimensions, int num)
-{
+Status point_get_point2(POINT hPoint, int dimensions, int num) {
 	Point *pPoint = (Point*)hPoint;
 	int i;
 	double *temp;
@@ -56,6 +57,7 @@ Status point_get_point2(POINT hPoint, int dimensions, int num)
 		temp = (double*)malloc(sizeof(double) * dimensions);
 		if (temp == NULL)
 			return FAILURE;
+		free(pPoint->data);
 		pPoint->data = temp;
 		pPoint->dimensions = dimensions;
 	}
@@ -68,8 +70,7 @@ Status point_get_point2(POINT hPoint, int dimensions, int num)
 }
 
 
-double point_calculate_distance_two_points(POINT hRight, POINT hLeft)
-{
+double point_calculate_distance_two_points(POINT hRight, POINT hLeft) {
 	Point *pRight = (Point*)hRight, *pLeft = (Point*)hLeft;
 	double sum = 0;
 	int i;
@@ -80,8 +81,8 @@ double point_calculate_distance_two_points(POINT hRight, POINT hLeft)
 	return sum;
 }
 
-void point_print_information(POINT hPoint)
-{
+
+void point_print_information(POINT hPoint) {
 	Point *pPoint = (Point*)hPoint;
 	int i;
 
@@ -94,8 +95,7 @@ void point_print_information(POINT hPoint)
 }
 
 
-Status point_assignment(ITEM *pLeft, ITEM right)
-{
+Status point_assignment(ITEM *pLeft, ITEM right) {
 	Point *temp_left;
 	Point *temp_right = (Point*)right;	//need to know dimensions of right in case of creation
 	int i;
@@ -125,8 +125,8 @@ Status point_assignment(ITEM *pLeft, ITEM right)
 	return SUCCESS;
 }
 
-void point_destroy(ITEM *pItem)
-{
+
+void point_destroy(ITEM *pItem) {
 	Point *pPoint = (Point*)*pItem;
 	free(pPoint->data);
 	free(pPoint);
