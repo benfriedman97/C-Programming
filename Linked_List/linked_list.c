@@ -26,7 +26,6 @@ void list_print_list(Node *head) {
 }
 
 
-/*3.34*/
 Node* list_move_largest_item_to_end(Node *head) {
 	Node *temp, //walk through list
 		*largest, //stores largest node
@@ -64,7 +63,6 @@ Node* list_move_largest_item_to_end(Node *head) {
 }
 
 
-/*3.35*/
 Node *list_move_smallest_item_to_front(Node *head) {
 	Node *temp, //walk through list
 		*smallest, //stores largest node
@@ -126,7 +124,6 @@ Node* list_flip_even_and_odds(Node *head) {
 }
 
 
-/*3.37*/
 Node* list_exchange_nodes(Node *head, Node *t, Node *u) {	
 	if (head == NULL || u == t)
 		return head;
