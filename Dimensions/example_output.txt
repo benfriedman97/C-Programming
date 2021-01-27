@@ -1,0 +1,135 @@
+Visual Leak Detector read settings from: C:\Program Files (x86)\Visual Leak Detector\vld.ini
+Visual Leak Detector Version 2.5.1 installed.
+Enter number of dimensions, number of points, and max length between two points
+2 10 .3
+Dimensions: 2
+Coordinates: (0.77, 0.16)
+
+Dimensions: 2
+Coordinates: (0.25, 0.27)
+
+Dimensions: 2
+Coordinates: (0.20, 0.28)
+
+Dimensions: 2
+Coordinates: (0.27, 0.14)
+
+Dimensions: 2
+Coordinates: (0.44, 0.68)
+
+Dimensions: 2
+Coordinates: (0.14, 0.85)
+
+Dimensions: 2
+Coordinates: (0.17, 0.69)
+
+Dimensions: 2
+Coordinates: (0.18, 0.14)
+
+Dimensions: 2
+Coordinates: (0.23, 0.26)
+
+Dimensions: 2
+Coordinates: (0.28, 0.25)
+
+
+There were 17 lines less than the max of 0.30
+No memory leaks detected.
+Visual Leak Detector is now exiting.
+
+
+
+
+
+
+
+
+
+
+
+
+
+Visual Leak Detector read settings from: C:\Program Files (x86)\Visual Leak Detector\vld.ini
+Visual Leak Detector Version 2.5.1 installed.
+Enter number of dimensions, number of points, and max length between two points
+3 10 .3
+Dimensions: 3
+Coordinates: (0.88, 0.17, 0.24)
+
+Dimensions: 3
+Coordinates: (0.24, 0.19, 0.31)
+
+Dimensions: 3
+Coordinates: (0.13, 0.26, 0.32)
+
+Dimensions: 3
+Coordinates: (0.28, 0.28, 0.24)
+
+Dimensions: 3
+Coordinates: (0.89, 0.13, 0.27)
+
+Dimensions: 3
+Coordinates: (0.30, 0.14, 0.22)
+
+Dimensions: 3
+Coordinates: (0.94, 0.72, 0.16)
+
+Dimensions: 3
+Coordinates: (0.47, 0.18, 0.45)
+
+Dimensions: 3
+Coordinates: (0.16, 0.17, 0.31)
+
+Dimensions: 3
+Coordinates: (0.19, 0.28, 0.20)
+
+
+There were 18 lines less than the max of 0.30
+No memory leaks detected.
+Visual Leak Detector is now exiting.
+
+
+
+
+
+
+
+
+Visual Leak Detector read settings from: C:\Program Files (x86)\Visual Leak Detector\vld.ini
+Visual Leak Detector Version 2.5.1 installed.
+Enter number of dimensions, number of points, and max length between two points
+4 10 .3
+Dimensions: 4
+Coordinates: (0.89, 0.18, 0.93, 0.20)
+
+Dimensions: 4
+Coordinates: (0.27, 0.23, 0.19, 0.24)
+
+Dimensions: 4
+Coordinates: (0.18, 0.18, 0.25, 0.25)
+
+Dimensions: 4
+Coordinates: (0.27, 0.76, 0.14, 0.27)
+
+Dimensions: 4
+Coordinates: (0.84, 0.19, 0.10, 0.17)
+
+Dimensions: 4
+Coordinates: (0.16, 0.36, 0.27, 0.20)
+
+Dimensions: 4
+Coordinates: (0.24, 0.27, 0.30, 0.46)
+
+Dimensions: 4
+Coordinates: (0.29, 0.31, 0.29, 0.17)
+
+Dimensions: 4
+Coordinates: (0.12, 0.15, 0.22, 0.17)
+
+Dimensions: 4
+Coordinates: (0.10, 0.69, 0.80, 0.30)
+
+
+There were 14 lines less than the max of 0.30
+No memory leaks detected.
+Visual Leak Detector is now exiting.
