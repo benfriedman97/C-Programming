@@ -1,2 +1,2 @@
-Interface to a x-y coordinate pair object. Can get the distance between two points, swap poitns, and
-determine if 3 points are collinear.
+# Point Interface for X-Y Coordinate Pairs
+Can get the distance between two points, swap points, and determine if 3 points are collinear. The example main program and output demonstrate the collinear determination function.
