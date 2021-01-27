@@ -3,7 +3,7 @@
 
 #define EULER 0.57721
 #define ERROR -1
-
+#define N1 1000
 
 /* Approximates value of harmonic function using formula
    H = ln(N) + y + 1/(12N) where y is euler's constant (0.57721...) */
@@ -83,6 +83,27 @@ int main(int argc, char *argv[]) {
 		}
 	}
 	printf("\n\n\n");
+	
+	int num_primes, a[N1], i, j;
+	printf("CALCULATION 5\n");
+	printf("Implementing the program to print out the number of prime numbers less than an integer\n"
+		"for all integers up to a certain integer, in this case 1000 for the test\n");
+	for (i = 1; i < N1; i++)
+		a[i] = sieve_of_eratosthenes_num_primes(i);
+
+	for (i = 1; i < N1; i++) {
+		if (i == 1 || i % 24 == 0) {
+			printf("%-8c:", 'N');
+			for (j = i; j < i + 24 && j < N1; j++)
+				printf("%4d", j);
+			printf("\n");
+			printf("%-8s:", "Primes");
+			for (j = i; j < i + 24 && j < N1; j++)
+				printf("%4d", a[j]);
+			printf("\n\n");
+		}
+	}
+	
 	return 0;
 }
 
