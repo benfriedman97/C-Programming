@@ -1,0 +1,14 @@
+Visual Leak Detector read settings from: C:\Program Files (x86)\Visual Leak Detector\vld.ini
+Visual Leak Detector Version 2.5.1 installed.
+Get point 1
+Enter x coordinate: 1
+Enter y coordinate: 2
+Get point 2
+Enter x coordinate: 3
+Enter y coordinate: 3
+Get point 3
+Enter x coordinate: 5
+Enter y coordinate: 7
+Points (1.00, 2.00), (3.00, 3.00), and (5.00, 7.00) are not collinear
+No memory leaks detected.
+Visual Leak Detector is now exiting.
