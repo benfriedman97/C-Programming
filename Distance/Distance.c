@@ -3,7 +3,6 @@
 #include <math.h>
 #include "Distance.h"
 
-#define ERROR_TOLERANCE 0.0001
 
 typedef struct point {
 	float x, y;
@@ -14,8 +13,8 @@ typedef struct polar_coord {
 	float radius, theta;
 } Polar_coord;
 
-POINT point_init_default(void)
-{
+
+POINT point_init_default(void) {
 	Point *pPoint = (Point*)malloc(sizeof(Point));
 	if (pPoint != NULL) {
 		pPoint->x = 0;
@@ -25,8 +24,7 @@ POINT point_init_default(void)
 }
 
 
-Status point_get_point(POINT hPoint)
-{
+Status point_get_point(POINT hPoint) {
 	Point *pPoint = (Point*)hPoint;
 	int status = 0;
 
@@ -41,8 +39,7 @@ Status point_get_point(POINT hPoint)
 }
 
 
-float point_get_distance_two_points(POINT hPoint1, POINT hPoint2, Status *pStatus)
-{
+float point_get_distance_two_points(POINT hPoint1, POINT hPoint2, Status *pStatus) {
 	Point *pPoint1 = (Point*)hPoint1, *pPoint2 = (Point*)hPoint2;
 	if (pPoint1 == NULL || pPoint2 == NULL) {
 		if (*pStatus != NULL)
@@ -55,22 +52,19 @@ float point_get_distance_two_points(POINT hPoint1, POINT hPoint2, Status *pStatu
 }
 
 
-float point_get_x_coordinate(POINT hPoint)
-{
+float point_get_x_coordinate(POINT hPoint) {
 	Point *pPoint = (Point*)hPoint;
 	return pPoint->x;
 }
 
 
-float point_get_y_coordinate(POINT hPoint)
-{
+float point_get_y_coordinate(POINT hPoint) {
 	Point *pPoint = (Point*)hPoint;
 	return pPoint->y;
 }
 
 
-Status point_swap_points(POINT hPoint_to_change, POINT hPoint)
-{
+Status point_swap_points(POINT hPoint_to_change, POINT hPoint) {
 	if (hPoint_to_change == NULL || hPoint == NULL)
 		return FAILURE;
 	Point* pPoint_to_change = (Point*)hPoint_to_change, *pPoint = (Point*)hPoint;
@@ -80,8 +74,7 @@ Status point_swap_points(POINT hPoint_to_change, POINT hPoint)
 }
 
 
-Boolean point_three_points_are_collinear(POINT hPoint1, POINT hPoint2, POINT hPoint3)
-{
+Boolean point_three_points_are_collinear(POINT hPoint1, POINT hPoint2, POINT hPoint3) {
 	Point *pPoint1 = (Point*)hPoint1, *pPoint2 = (Point*)hPoint2, *pPoint3 = (Point*)hPoint3;
 	float slope1, slope2;
 
@@ -97,8 +90,7 @@ Boolean point_three_points_are_collinear(POINT hPoint1, POINT hPoint2, POINT hPo
 }
 
 
-void point_destroy(POINT* phPoint)
-{
+void point_destroy(POINT* phPoint) {
 	Point *pPoint = (Point*)*phPoint;
 	free(pPoint);
 	*phPoint = NULL;
