@@ -1,9 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "linked_list.h"
+#include "header.h"
 
-Node* list_create_list(int size)
-{
+Node* list_create_list(int size) {
 	Node *head, *temp;
 	int i;
 
@@ -18,17 +17,17 @@ Node* list_create_list(int size)
 	return head;
 }
 
-void list_print_list(Node *head)
-{
+
+void list_print_list(Node *head) {
 	while (head != NULL) {
 		printf("%d\n", head->item);
 		head = head->next;
 	}
 }
 
+
 /*3.34*/
-Node* list_move_largest_item_to_end(Node *head)
-{
+Node* list_move_largest_item_to_end(Node *head) {
 	Node *temp, //walk through list
 		*largest, //stores largest node
 		*previous; //stores node before largest
@@ -64,9 +63,9 @@ Node* list_move_largest_item_to_end(Node *head)
 	return head;
 }
 
+
 /*3.35*/
-Node *list_move_smallest_item_to_front(Node *head)
-{
+Node *list_move_smallest_item_to_front(Node *head) {
 	Node *temp, //walk through list
 		*smallest, //stores largest node
 		*previous; //stores node before largest
@@ -98,8 +97,7 @@ Node *list_move_smallest_item_to_front(Node *head)
 }
 
 
-Node* list_flip_even_and_odds(Node *head)
-{
+Node* list_flip_even_and_odds(Node *head) {
 	Node *odd, *even, *previous, *new_head;
 
 	//empty or one node list
@@ -127,9 +125,9 @@ Node* list_flip_even_and_odds(Node *head)
 	return new_head;
 }
 
+
 /*3.37*/
-Node* list_exchange_nodes(Node *head, Node *t, Node *u) 
-{	
+Node* list_exchange_nodes(Node *head, Node *t, Node *u) {	
 	if (head == NULL || u == t)
 		return head;
 
@@ -197,9 +195,8 @@ Node* list_exchange_nodes(Node *head, Node *t, Node *u)
 	}
 	return head;
 }
-//helper function: returns address of nth node
-Node *list_get_node_address(Node *head, int n)
-{
+// helper function: returns address of nth node
+Node *list_get_node_address(Node *head, int n) {
 	Node *node = head;
 	int i;
 
@@ -209,8 +206,7 @@ Node *list_get_node_address(Node *head, int n)
 }
 
 
-Node *list_copy(Node *head)
-{
+Node *list_copy(Node *head) {
 	Node *new_list = NULL, *temp;
 	if (head != NULL) {
 		new_list = (Node*)malloc(sizeof(Node));
@@ -228,6 +224,7 @@ Node *list_copy(Node *head)
 	temp->next = NULL;
 	return new_list;
 }
+
 
 void list_delete_list(Node **pHead, int(*f)(Node*)) {
 	Node *temp, *before = NULL, *after;
@@ -272,8 +269,8 @@ void list_delete_list(Node **pHead, int(*f)(Node*)) {
 	}
 }
 
-int f(Node *list)
-{
+
+int f(Node *list) {
 	if (list->item % 2 == 0)
 		return 0;
 	else
@@ -281,8 +278,7 @@ int f(Node *list)
 }
 
 
-Node *list_copy_deleted_list(Node *head, int(*f)(Node*))
-{
+Node *list_copy_deleted_list(Node *head, int(*f)(Node*)) {
 	Node *new_head = NULL, *temp;
 	int status;
 
@@ -310,8 +306,8 @@ Node *list_copy_deleted_list(Node *head, int(*f)(Node*))
 	return new_head;
 }
 
-Node* list_reverse_list(Node *list)
-{
+
+Node* list_reverse_list(Node *list) {
 	Node *saved_head = list, *before = NULL, *current = list->next, *after;
 	while (current != NULL) {
 		after = current->next;	//save pointer to node after one about to be reversed
@@ -323,8 +319,8 @@ Node* list_reverse_list(Node *list)
 	return saved_head;
 }
 
-Node *list_create_list2(int size)
-{
+
+Node *list_create_list2(int size) {
 	Node *head, *temp;
 	int i;
 
@@ -340,8 +336,8 @@ Node *list_create_list2(int size)
 	return head;
 }
 
-void list_print_list2(Node *list)
-{
+
+void list_print_list2(Node *list) {
 	Node *head = list->next;
 	while (head != NULL) {
 		printf("%d\n", head->item);
@@ -349,8 +345,8 @@ void list_print_list2(Node *list)
 	}
 }
 
-Node* list_create_list_random(int size)
-{
+
+Node* list_create_list_random(int size) {
 	Node *head, *temp;
 	int i;
 
@@ -365,8 +361,8 @@ Node* list_create_list_random(int size)
 	return head;
 }
 
-Node *list_sort_list_no_head_node(Node *head)
-{
+
+Node *list_sort_list_no_head_node(Node *head) {
 	if (head == NULL || head->next == NULL)
 		return head;
 	Node *new_head, *before_current, *current, *after_current,
@@ -426,8 +422,7 @@ Node *list_sort_list_no_head_node(Node *head)
 }
 
 
-Node* list_create_circular_list_with_head_node(int size)
-{
+Node* list_create_circular_list_with_head_node(int size) {
 	Node *head = (Node*)malloc(sizeof(Node)),
 		*temp;
 	int i;
@@ -440,8 +435,8 @@ Node* list_create_circular_list_with_head_node(int size)
 	return head;
 }
 
-void list_print_circular_list_with_head_node(Node *head)
-{
+
+void list_print_circular_list_with_head_node(Node *head) {
 	Node *temp = head->next;
 	do {
 		printf("%d\n", temp->item);
@@ -449,8 +444,8 @@ void list_print_circular_list_with_head_node(Node *head)
 	} while (temp != head->next);
 }
 
-Node* list_josephus(Node *head, int M)
-{
+
+Node* list_josephus(Node *head, int M) {
 	int i;
 	Node *current, *temp;
 	//set up position so current is at last node
@@ -469,8 +464,8 @@ Node* list_josephus(Node *head, int M)
 	return current;
 }
 
-Node2* doubly_list_create(int size)
-{
+
+Node2* doubly_list_create(int size) {
 	Node2 *head, *previous, *current;
 	int i;
 
@@ -494,6 +489,7 @@ Node2* doubly_list_create(int size)
 	return head;
 }
 
+
 void doubly_list_print_list(Node2 *head)
 {
 	while (head != NULL) {
@@ -502,8 +498,8 @@ void doubly_list_print_list(Node2 *head)
 	}
 }
 
-Node2* doubly_list_exchange_nodes(Node2 *head, Node2 *t, Node2 *u)
-{
+
+Node2* doubly_list_exchange_nodes(Node2 *head, Node2 *t, Node2 *u) {
 	if (head == NULL || u == t)
 		return head;
 
@@ -600,8 +596,8 @@ Node2* doubly_list_exchange_nodes(Node2 *head, Node2 *t, Node2 *u)
 	return head;
 }
 
-Node2* doubly_list_get_node_address(Node2 *head, int n)
-{
+
+Node2* doubly_list_get_node_address(Node2 *head, int n) {
 	Node2 *temp = head;
 	int i;
 	for (i = 1; i < n; i++) {
@@ -612,8 +608,8 @@ Node2* doubly_list_get_node_address(Node2 *head, int n)
 	return temp;
 }
 
-void doubly_list_print_reverse_list(Node2 *head)
-{
+
+void doubly_list_print_reverse_list(Node2 *head) {
 	while (head->next != NULL)
 		head = head->next;
 	while (head != NULL) {
