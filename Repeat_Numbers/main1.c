@@ -19,9 +19,7 @@ int main(void) {
 	srand(time(NULL));
 	while (repeated_not_found) {
 		//get the number, check if repeate
-		n = rand();
-		while (n > 1000)
-			n /= 10;
+		n = rand() % 1001;
 		for (i = 0; i < size; i++)
 			if (n == a[i])
 				repeated_not_found = 0;
