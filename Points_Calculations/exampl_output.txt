@@ -1,0 +1,8 @@
+Visual Leak Detector read settings from: C:\Program Files (x86)\Visual Leak Detector\vld.ini
+Visual Leak Detector Version 2.5.1 installed.
+Maximum distance: .25
+Number of points: 10
+4 edges shorter than 0.250000
+Coordinates of closest pair of points: (0.63, 0.32) and (0.44, 0.39)
+No memory leaks detected.
+Visual Leak Detector is now exiting.
