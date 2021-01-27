@@ -3,11 +3,12 @@
 #include <time.h>
 #include "dimensions.h"
 
+
 void get_dimensions_points_max_length(int *pDimensions, int *pNum_points, 
 	double *pMax_length);
 
-int main(int argc, char *arv[])
-{
+
+int main(int argc, char *arv[]) {
 	GENERIC_VECTOR hVector = NULL;
 	POINT hPoint = NULL;
 	int dimensions, number_of_points, i, j, lines_less_than_max = 0;
@@ -22,7 +23,7 @@ int main(int argc, char *arv[])
 	srand(time(NULL));
 	//create objects and store them in vector
 	for (i = 0; i < number_of_points; i++) {
-		//point_get_point2(hPoint, dimensions, i);
+		// point_get_point2(hPoint, dimensions, i);
 		point_get_point(hPoint, dimensions);
 		generic_vector_push_back(hVector, (ITEM)hPoint);
 	}
@@ -48,8 +49,8 @@ int main(int argc, char *arv[])
 	return 0;
 }
 
-void get_dimensions_points_max_length(int *pDimensions, int *pNum_points, double *pMax_length)
-{
+
+void get_dimensions_points_max_length(int *pDimensions, int *pNum_points, double *pMax_length) {
 	printf("Enter number of dimensions, number of points, and max length between two points\n");
 	scanf("%d%d%lf", pDimensions, pNum_points, pMax_length);
 }
