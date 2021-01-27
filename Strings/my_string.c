@@ -2,13 +2,12 @@
 #include <string.h>
 #include <ctype.h>
 #include <stdlib.h>
-#include "string.h"
+#include "my_string.h"
+
 #define SIZE 96
 #define N 10000
 
-
-void string_character_occurence(char *str)
-{
+void string_character_occurence(char *str) {
 	int characters[SIZE], ch;
 	int i;
 	
@@ -27,8 +26,8 @@ void string_character_occurence(char *str)
 	}
 }
 
-int string_is_palindrome(char *str)
-{
+
+int string_is_palindrome(char *str) {
 	int len = strlen(str), i, j;
 	
 	for (i = 0, j = len - 1; i < j; i++, j--) {
@@ -44,8 +43,7 @@ int string_is_palindrome(char *str)
 }
 
 
-char* string_strcpy(char *str)
-{
+char* string_strcpy(char *str) {
 	int len = strlen(str), i;
 	char *copy = (char*)malloc(sizeof(char) * (len + 1));
 	if (copy == NULL)
@@ -56,8 +54,8 @@ char* string_strcpy(char *str)
 	return copy;
 }
 
-char* string_strcat(char *original, char *add_on)
-{
+
+char* string_strcat(char *original, char *add_on) {
 	int len1 = strlen(original), len2 = strlen(add_on), i, j;
 	char *new_str = (char*)malloc(sizeof(char) *(len1 + len2 + 1));
 	if (new_str == NULL)
@@ -71,8 +69,7 @@ char* string_strcat(char *original, char *add_on)
 }
 
 
-void string_substrings(char *str)
-{
+void string_substrings(char *str) {
 	char str2[100];
 	int status = 1, str_len = strlen(str), i, j, k,
 		is_substring;
@@ -96,8 +93,8 @@ void string_substrings(char *str)
 	}
 }
 
-void string_delete_multiple_blanks(char *str)
-{
+
+void string_delete_multiple_blanks(char *str) {
 	int i, j, k;
 
 	for (i = 0, j = 0; str[i] != '\0'; ++i, j = i)
@@ -111,8 +108,8 @@ void string_delete_multiple_blanks(char *str)
 		}
 }
 
-void string_pointer_3_15(char *p)
-{
+
+void string_pointer_3_15(char *p) {
 	int i, j, t;
 	char a[N], *tempa, *tempp;
 	for (tempa = a, i = 0; i < N - 1; *tempa = t, i++, tempa++)
@@ -131,8 +128,7 @@ void string_pointer_3_15(char *p)
 }
 
 
-int string_longest_sequence_of_blanks(char *str)
-{
+int string_longest_sequence_of_blanks(char *str) {
 	int len = strlen(str);
 	int max_count = 0, count, i;
 	for (i = 0; i < len - max_count; i++)
