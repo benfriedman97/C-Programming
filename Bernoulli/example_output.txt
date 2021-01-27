@@ -1,0 +1,40 @@
+Visual Leak Detector read settings from: C:\Program Files (x86)\Visual Leak Detector\vld.ini
+Visual Leak Detector Version 2.5.1 installed.
+Enter # of coin flips: 32
+Enter # of experiments: 1000
+Enter n for probability (1 / n): 2
+ 0
+ 1
+ 2
+ 3
+ 4
+ 5
+ 6*
+ 7*
+ 8*
+ 9*
+10**
+11****
+12****
+13******
+14*********
+15************
+16************
+17**************
+18*************
+19**********
+20********
+21*****
+22***
+23**
+24*
+25*
+26*
+27
+28
+29
+30
+31
+32
+No memory leaks detected.
+Visual Leak Detector is now exiting.
