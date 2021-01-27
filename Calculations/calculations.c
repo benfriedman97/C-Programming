@@ -21,15 +21,14 @@ unsigned calculate(unsigned n);
 long unsigned calc_bits_in_lg_N_facotorial(long unsigned n);
 
 /* prints out the prime numbers up to N */
-void sieve_of_eratosthenes_original(int N);
+void sieve_of_eratosthenes_original(long unsigned N);
 
 /* Prints out prime numbers up to N and
-  returns the number of prime numbers */
-int sieve_of_eratosthenes_1(int N);
-
-/* Prints out prime numbers less than N and
    returns the number of prime numbers */
-int sieve_of_eratosthenes_num_primes(int N);
+unsigned sieve_of_eratosthenes_1(long unsigned N);
+
+/* returns the number of prime numbers */
+unsigned sieve_of_eratosthenes_num_primes(long unsigned N);
 
 
 
@@ -58,13 +57,39 @@ int main(int argc, char *argv[]) {
 		printf("Number of bits in binary representation of lg(%d!) = %d\n", i, calc_bits_in_lg_N_facotorial(i));
 	}
 	printf("\n\n\n");
+	
+	printf("CALCULATION 4\n");
+	printf("Implementing the function prints out and calculates all of the prime numbers up to some integer N\n");
+	long unsigned N = 1000;
+	unsigned num_primes = sieve_of_eratosthenes_1(N);
+	printf("Number of prime numbers less than %d: %d\n\n\n", N, num_primes);
+	printf("\n\n\n");
+	
+	printf("CALCULATION 5\n");
+	printf("This will print out the number of primes less than a particular number for all numbers up to some integer N\n");
+	int num_primes, a[N1], i, j;
+	for (i = 1; i < N1; i++)
+		a[i] = sieve_of_eratosthenes_num_primes(i);
+	for (i = 1; i < N1; i++) {
+		if (i == 1 || i % 24 == 0) {
+			printf("%-8c:", 'N');
+			for (j = i; j < i + 24 && j < N1; j++)
+				printf("%4d", j);
+			printf("\n");
+			printf("%-8s:", "Primes");
+			for (j = i; j < i + 24 && j < N1; j++)
+				printf("%4d", a[j]);
+			printf("\n\n");
+		}
+	}
+	printf("\n\n\n");
 	return 0;
 }
 
 
 
 long double harmonic_nat_log(long unsigned n) {
-	return log(n) + EULER + 1.0 / ((long unsigned)12 * n);
+	return log(n) + EULER + 1.0 / (n * (long unsigned)12);
 }
 
 long double harmonic_sigma(unsigned n) {
@@ -135,9 +160,9 @@ long unsigned calc_bits_in_lg_N_facotorial(long unsigned n) {
 }
 
 
-void sieve_of_eratosthenes_original(int N) {
-	int i, j,
-		*a = (int*)malloc(sizeof(int) * N);
+void sieve_of_eratosthenes_original(long unsigned N) {
+	long unsigned i, j;
+	int *a = (int*)malloc(sizeof(int) * N);
 	if (a == NULL) {
 		printf("Malloc failure\n");
 		exit(1);
@@ -151,58 +176,65 @@ void sieve_of_eratosthenes_original(int N) {
 			}
 		}
 	}
-	for (i = 2; i < N; i++)
+	for (i = 2; i < N; i++) {
 		if (a[i])
-			printf("%4d ", i);
+			printf("%4d\n", i);
+	}
 	printf("\n");
 }
 
 
-int sieve_of_eratosthenes_1(int n) {
-	unsigned int i, j;
-	int num_primes = 0,
-		*a = (int*)malloc(sizeof(int) * n);
-	if (a == null) {
+unsigned sieve_of_eratosthenes_1(long unsigned N) {
+	long unsigned i, j;
+	unsigned num_primes = 0;
+	int *a = (int*)malloc(sizeof(int) * N);
+	if (a == NULL) {
 		printf("malloc failure\n");
 		exit(1);
 	}
-	for (i = 2; i < n; i++)
+	for (i = 2; i < N; i++)
 		a[i] = 1;
-	for (i = 2; i < n; i++) {
+	for (i = 2; i < N; i++) {
 		if (a[i]) {
-			for (j = i; i * j < n; j++) {
+			for (j = i; i * j < N; j++) {
 				a[i * j] = 0;
 			}
 		}
 	}
 
-	/*this is the part that prints out all the prime numbers
-	and calculates the prime numbers. the print is
-	commented out for now because i just want to print
-	the total prime numbers of to n using the return statement
-	but not actually print every prime number*/
-	for (i = 2; i < n; i++)
+	for (i = 2; i < N; i++) {
 		if (a[i]) {
-			//printf("%4d ", i);
+			printf("%4d\n", i);
 			num_primes++;
 		}
+	}
+
 	free(a);
 	return num_primes;
 }
 
-int sieve_of_eratosthenes_num_primes(int N) {
-	int i, j, num_primes = 0, *a = (int*)malloc(sizeof(int) * N);
-	if (a == NULL) { printf("Malloc failure\n"); exit(1);
+
+unsigned sieve_of_eratosthenes_num_primes(long unsigned N) {
+	long unsigned i, j; 
+	unsigned num_primes = 0;
+	int *a = (int*)malloc(sizeof(int) * N);
+
+	if (a == NULL) { 
+		printf("Malloc failure\n"); 
+		exit(1);
 	}
 	for (i = 2; i < N; i++)
 		a[i] = 1;
+	
 	for (i = 2; i < N; i++)
 		if (a[i])
 			for (j = i; i * j < N; j++)
 				a[i * j] = 0;
-	for (i = 2; i < N; i++)
+	
+	for (i = 2; i < N; i++) {
 		if (a[i])
 			num_primes++;
+	}
 	free(a);
 	
 	return num_primes;
